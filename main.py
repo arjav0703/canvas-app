@@ -12,24 +12,24 @@ class DrawingApp:
         self.eraser_mode = False
         self.eraser_indicator = None
         
-        # Canvas Setup
+        # canvas Setup
         self.canvas = tk.Canvas(self.root, bg="white", width=800, height=600)
         self.canvas.pack(fill=tk.BOTH, expand=True)
         
-        # Event bindings
+        # event bindings
         self.canvas.bind("<Button-1>", self.start_draw)
         self.canvas.bind("<B1-Motion>", self.draw)
         self.canvas.bind("<ButtonRelease-1>", self.stop_draw)
         
         self.setup_toolbar()
-        self.start_x = self.start_y = None
+        self.start_x = self.start_y = None 
         self.shape_id = None
 
     def setup_toolbar(self):
         toolbar = tk.Frame(self.root, bg="#37474f")
         toolbar.pack(fill=tk.X, pady=10)
 
-        # Styling for buttons
+        # styling for buttons
         style = ttk.Style()
         style.configure("TButton", font=("Arial", 12, "bold"), padding=10, relief="flat")
         style.configure("TButton", background="#1e88e5", foreground="white")
